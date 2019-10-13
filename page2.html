@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>注册</title>
+    <title>登录</title>
     <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" class="well" style="width: 30em; margin: auto; margin-top: 150px;">
-        <h3>用户注册</h3>
+    <form id="form1" class="well" style="width: 30em; margin: auto; margin-top: 150px;display: block;">
+        <h3>用户登录</h3>
         <div class=" input-group input-group-md">
             <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user"></i></span>
             <input id="userName" type="text" class="form-control" />
@@ -21,15 +21,10 @@
             <input type="password" id="password" class="form-control" />
         </div>
         <br />
-        <div class="input-group input-group-md" style="margin-bottom: 10px">
-            <span class="input-group-addon" id="sizing-addon1"><i class="<glyph></glyph>icon glyphicon-lock"></i></span>
-            <input type="password" id="password" class="form-control"  />
-        </div>
-        
-        <a href="page2.html"><button type="button" id="bn" class="btn btn-success btn-block">注册</button>
-        <a class="btn btn-sm btn-white btn-block" style="text-align: right;" th:href="@{index}" href="index.html">
+        <button type="button" id="bn" class="btn btn-success btn-block">登录</button>
+        <a class="btn btn-sm btn-white btn-block" style="text-align: right; " th:href="@{register}" href="register.html" -->
     
-            <h6><a href="page2.html">已注册？请登录</a></h6>
+            <h6><a href="page1.html">还没有账户？前往注册</a></h6>
         </a>
     </form>
 </body>
