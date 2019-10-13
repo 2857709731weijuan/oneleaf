@@ -17,7 +17,6 @@ a{
     z-index: 10;
     background:white;
 }
-
 /* header */
 header{
     width: 100%;
@@ -52,7 +51,6 @@ a:hover .wximg{
     z-index: 1;
     display: none;
 }
-
 .hmiddle{
     width: 800px;
     height: 80px;
@@ -83,11 +81,12 @@ a:hover .wximg{
     margin-top: 140px;
     background: darkmagenta;
 }
-
 .bgbox1{
     float: left;
     width: 50%;
     height: 2716px;
+
+    
     background: darksalmon;
     }
 .bgbox2{

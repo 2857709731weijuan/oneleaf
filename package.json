@@ -2,11 +2,7 @@
   "name": "oneleaf",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "gulp": "^4.0.2"
-  },
-  "devDependencies": {},
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/2857709731weijuan/oneleaf/issues"
   },
-  "homepage": "https://github.com/2857709731weijuan/oneleaf#readme"
+  "homepage": "https://github.com/2857709731weijuan/oneleaf#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^4.0.2"
+  }
 }
