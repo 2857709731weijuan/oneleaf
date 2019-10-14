@@ -30,12 +30,13 @@
         <div class="middlebox">
             <span>我的BOLOG</span><br>
             <span>输入您的手机号或者电子邮箱及密码登录“我的帐户”</span>
-            <input type="text" placeholder="手机号/电子邮箱" class="phone"><br>
-            <input type="password" placeholder="密码"><br>
+            <input type="text" placeholder="手机号/电子邮箱" class="phone" id="username"><br>
+            <input type="password" placeholder="密码" id="userpass"><br>
             <input type="checkbox" class="mm"> 记住我的密码<br>
-            <input type="submit" value="登录" class="bolog"><a href="#">忘记密码</a><br> 
+            <input type="button" value="登录" class="bolog" id="btnLogin"><a href="#">忘记密码</a><br> 
             还没有账号？<a href="page4.html"> 立即注册</a>
-            
+            <div id="messageBox">
+            </div>
         </div>
     </div>
     <!-- footer -->
@@ -45,3 +46,37 @@
     </footer>
 </body>
 </html>
+<script>
+    $("#btnLogin").onclick = function(){
+        //1、
+        let xhr = new XMLHttpRequest();
+    
+        xhr.open("post","loginCheck.php",true);
+    
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState==4 && xhr.status==200){
+                if(xhr.responseText=="1"){
+                    location.href="index.html";
+                }else{
+                    $("#messageBox").innerHTML = "用户名或者密码错误！";
+                }
+            }
+        }
+        //post方式：设置请求头
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        //post方式：把传给服务器端数据（键值对）放在send函数的参数里。
+        let sendstr = `username=${$("#username").value}&userpass=${$("#userpass").value}`;
+        xhr.send(sendstr);
+    }
+    
+    function $(str){
+        if(str.charAt(0)=="#"){
+            return document.getElementById(str.substring(1));
+        }else if(str.charAt(0)=="."){
+            return document.getElementsByClassName(str.substring(1));
+        }else{
+            return document.getElementsByTagName(str);
+        }
+    }	
+    
+    </script>

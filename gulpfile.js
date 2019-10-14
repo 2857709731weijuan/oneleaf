@@ -28,5 +28,9 @@ gulp.task("watchall",async ()=>{
         gulp.src("css/**/*")
         .pipe(gulp.dest("D:\\phpstudy1\\www\\oneleaf\\css"))
     })
+    gulp.watch("*.php",async ()=>{
+        gulp.src("*.php")
+        .pipe(gulp.dest("D:\\phpstudy1\\www\\oneleaf"))
+    })
 
 })
