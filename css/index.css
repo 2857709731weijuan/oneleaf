@@ -79,21 +79,19 @@ a:hover .wximg{
     height: 100%;
     height: 2716px;
     margin-top: 140px;
-    background: darkmagenta;
+    /* background: darkmagenta; */
 }
 .bgbox1{
     float: left;
     width: 50%;
     height: 2716px;
-
-    
-    background: darksalmon;
+    /* background: darksalmon; */
     }
 .bgbox2{
     float: left;
     width: 50%;
     height: 2716px;
-    background: darksalmon;
+    /* background: darksalmon; */
     }
 .bgbox1 img{
     height: 2716px;
