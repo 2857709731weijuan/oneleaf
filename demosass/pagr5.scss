@@ -143,134 +143,35 @@ nav{
     text-decoration: none;
 }
 // content
-
-.fixed{
-    display: block;
-    position: fixed;
-    top:300px;
-    left: 10px;
-    width: 162px;
-    height: 300px;
-    border: 1px solid #85b24b;
-}
-.fixedb{
-   margin-top:30px;
-    margin-left: 10px;
-    width: 150px;
-    height: 260px;
-    overflow-y: scroll;
-}
-.fixed a{
-    display: block;
-    height: 40px;
-    border-top: 1px dashed grey;
-    padding-top: 10px;
-    text-decoration: none;
-}
-.fixed a:hover{
-    color:#85b24b;
-}
-.fleaf{
-    position: absolute;
-    top: -10px;
-    left: -2px;
-}
-
-.image{
-  margin-top: 140px;
-  
-}
 .content{
-    width: 1000px;
-    height:4800px;
+    width: 1070px;
+    height:600px;
     margin: 0 auto;
 }
 .top{
-    width: 1000px;
+    width: 1070px;
+    margin: 0 auto;
 }
 .nimo1{
     float: left;
-    width: 420px;
+    width: 450px;
     height: 20px;
     background:#98ba3b;
     margin-top: 20px;
 }
 .nimo2{
     float: right;
-    width: 420px;
+    width: 450px;
     height: 20px;
     background:#98ba3b;
     margin-top:-20px;
 }
 span{
     display: block;
-    width: 160px;
+    width: 140px;
     height: 20px;
     margin: 0 auto;
-   padding: 20px 31px;
-}
-.box{
-    width: 1000px;
-    height:400px ;
-}
-.nimo{
-    float: left;
-    width: 250px;
-}
-.nimo img{
-    width: 220px;
-    height: 250px;
-    margin-left: 15px;
-}
-.nimo p{
-    margin-left: 40px;
-    margin-bottom: 10px;
-}
-.nimo .yi{
-    margin-left: 60px;
-}
-.nimo .ni{
-    margin-left: 90px;
-}
-.product{
-    width: 150px;
-    height: 40px;
-    border: 1px solid black;
-    font-size: 16px;
-    line-height: 40px;
-    text-align:center;
-    margin: 0 auto;
-}
-.product,.nimo p:hover{
-    cursor: pointer;
-}
-.nimo3{
-    float: left;
-    width: 390px;
-    height: 20px;
-    background:#98ba3b;
-    margin-top: 20px;
-}
-.nimo4{
-    float: right;
-    width: 390px;
-    height: 20px;
-    background:#98ba3b;
-    margin-top:-20px;
-}
-.span1{
-    display: block;
-    width: 260px;
-    height: 20px;
-    margin: 0 auto;
-   padding: 20px 31px;
-}
-.span2{
-    display: block;
-    width: 260px;
-    height: 20px;
-    margin: 0 auto;
-   padding: 20px 61px;
+   padding: 20px 35px;
 }
 
 /* footer */

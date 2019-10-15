@@ -181,24 +181,25 @@ nav {
 
 .nimo1 {
   float: left;
-  width: 420px;
+  width: 400px;
   height: 20px;
   background: #98ba3b;
   margin-top: 20px; }
 
 .nimo2 {
   float: right;
-  width: 420px;
+  width: 400px;
   height: 20px;
   background: #98ba3b;
   margin-top: -20px; }
 
 span {
   display: block;
-  width: 160px;
+  width: 200px;
   height: 20px;
   margin: 0 auto;
-  padding: 20px 31px; }
+  text-align: center;
+  padding: 20px 0; }
 
 .box {
   width: 1000px;
@@ -214,14 +215,14 @@ span {
   margin-left: 15px; }
 
 .nimo p {
-  margin-left: 40px;
+  text-align: center;
   margin-bottom: 10px; }
 
 .nimo .yi {
-  margin-left: 60px; }
+  margin-left: 10px; }
 
 .nimo .ni {
-  margin-left: 90px; }
+  margin-left: 10px; }
 
 .product {
   width: 150px;
@@ -234,34 +235,6 @@ span {
 
 .product, .nimo p:hover {
   cursor: pointer; }
-
-.nimo3 {
-  float: left;
-  width: 390px;
-  height: 20px;
-  background: #98ba3b;
-  margin-top: 20px; }
-
-.nimo4 {
-  float: right;
-  width: 390px;
-  height: 20px;
-  background: #98ba3b;
-  margin-top: -20px; }
-
-.span1 {
-  display: block;
-  width: 260px;
-  height: 20px;
-  margin: 0 auto;
-  padding: 20px 31px; }
-
-.span2 {
-  display: block;
-  width: 260px;
-  height: 20px;
-  margin: 0 auto;
-  padding: 20px 61px; }
 
 /* footer */
 .footer {
