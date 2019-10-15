@@ -32,7 +32,7 @@
             <span>输入您的手机号或者电子邮箱及密码登录“我的帐户”</span>
             <input type="text" placeholder="手机号/电子邮箱" class="phone" id="username"><br>
             <input type="password" placeholder="密码" id="userpass"><br>
-            <input type="checkbox" class="mm"> 记住我的密码<br>
+            <input type="checkbox" class="mm" name="saveNP"><label> 记住我的密码</label><br>
             <input type="button" value="登录" class="bolog" id="btnLogin"><a href="#">忘记密码</a><br> 
             还没有账号？<a href="page4.html"> 立即注册</a>
             <div id="messageBox">
@@ -46,7 +46,48 @@
     </footer>
 </body>
 </html>
+<script src="js/base.js"></script>
 <script>
+
+function getCookie(key){
+		var cookiestr = document.cookie;
+		var list = cookiestr.split(";");
+		for(var i in list){
+			var arr = list[i].split("=");
+			if(trim(arr[0]) == key){
+				return arr[1];
+			}
+		}
+		return null;
+	}
+	
+	function trim(str){
+		return str.replace(/\s+/g,"");
+	}
+	
+	window.onload = function(){
+		// alert(trim(document.cookie));
+		document.getElementById("username").value = getCookie("username");
+		document.getElementById("password").value = getCookie("password");
+		document.getElementById("submitbtn").onclick = function(){
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			var box = document.getElementsByName("saveNP")[0];
+			if(box.checked){
+				var d = new Date();
+				var currentTime = d.getTime();
+				currentTime += 7*24*60*60*1000;
+				d.setTime(currentTime);
+				console.log(username);
+				console.log(password);
+				document.cookie = "username="+username+";expires="+d;
+				document.cookie = "password="+password+";expires="+d;
+			}
+			//数据校验
+			//提交表单
+		}
+	}
+	
     $("#btnLogin").onclick = function(){
         //1、
         let xhr = new XMLHttpRequest();

@@ -143,16 +143,19 @@ nav{
     text-decoration: none;
 }
 // content
-.one{
+.image{
   margin-top: 140px;
     // height: 500px;
     // background: greenyellow;
 }
-.box,.box1{
+.content{
     width: 1000px;
-    height: 800px;
+    height: 1500px;
+    background: rgb(136, 139, 133);
     margin: 0 auto;
-    background: rgb(215, 233, 51);
+}
+.top{
+    width: 1000px;
 }
 .nimo1{
     float: left;
@@ -174,6 +177,10 @@ span{
     height: 20px;
     margin: 0 auto;
    padding: 20px 31px;
+}
+.box{
+    width: 1000px;
+    height:400px ;
 }
 .nimo{
     float: left;
@@ -206,27 +213,6 @@ span{
 .product,.nimo p:hover{
     cursor: pointer;
 }
-.box1 .product{
-    width: 150px;
-    height: 40px;
-    border: 1px solid black;
-    font-size: 16px;
-    line-height: 40px;
-    text-align:center;
-    margin-left: 50px;
-}
-.box1 .product,.nimo p:hover{
-    cursor: pointer;
-}
-.box1 .yi{
-    margin-left: 60px;
-}
-
-
-
-
-
-
 
 
 

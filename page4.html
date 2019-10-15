@@ -27,8 +27,8 @@
        <span class="b">*必填</span><br>
        <hr>
             <input type="text"  placeholder="*手机号码" class="phone" id="username" onblur="checkuser(this)">*<span></span><br/>
-            <input type="password" placeholder="*新密码" id="userpass"><br>
-            <input type="password" placeholder="*确认密码" id="checkpass" ><br>
+            <input type="password" placeholder="*新密码" id="userpass"><span></span><br>
+            <input type="password" placeholder="*确认密码" id="checkpass" ><span></span><br>
             <input type="button" value="立即注册" class="log" id="btnReg"><br>
             <div id="messageBox">	
                 </div>
@@ -40,7 +40,43 @@
     </footer>
 </body>
 </html>
+<script src="js/regTools.js"></script>
 <script>
+ 
+$("#username").onblur = function(){
+    var str = this.value;
+    //手机号码的规则：十一位数字，开头是1。
+    var reg = /^1\d{10}$/;
+
+    if(reg.test(str)==true){
+        this.nextElementSibling.innerHTML = "√";
+    }else{
+        this.nextElementSibling.innerHTML = "×";
+    }
+}
+
+$("#userpass").onblur = function(){
+    var str = this.value;
+    //邮编的规则：六位数字，不能以0开头
+    var reg = /^[1-9]\d{5}$/;
+
+    if(reg.test(str)==true){
+        this.nextElementSibling.innerHTML = "√";
+    }else{
+        this.nextElementSibling.innerHTML = "×";
+    }
+}
+$("#checkpass").onblur = function(){
+    var str = this.value;
+    //邮编的规则：六位数字，不能以0开头
+    var reg = /^[1-9]\d{5}$/;
+
+    if(reg.test(str)==true){
+        this.nextElementSibling.innerHTML = "√";
+    }else{
+        this.nextElementSibling.innerHTML = "×";
+    }
+}
 $("#btnReg").onclick = function (){
 	let req = new XMLHttpRequest();
 	req.open("post","regSave.php",true);
