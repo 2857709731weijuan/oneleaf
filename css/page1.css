@@ -90,7 +90,8 @@ nav {
 .navbox a {
   float: left;
   margin: 0 20px;
-  text-decoration: none; }
+  text-decoration: none;
+  color: black; }
 
 .navbox a:hover {
   color: #85b24b;

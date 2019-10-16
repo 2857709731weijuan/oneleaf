@@ -55,15 +55,14 @@ a:hover .wximg{
     width: 800px;
     height: 80px;
     float: left;
-  
     margin-top: 20px;
 }
 .hmiddle img{
     padding-left: 320px;
 }
-.hright{
+/* .hright{
     float: left;
-}
+} */
 .hright a{
     height: 20px;
     font-size: 16px;
@@ -73,6 +72,18 @@ a:hover .wximg{
 .hright a:nth-child(1){
     padding-right: 5px;
     border-right: 1px dashed #7f7f7f;
+}
+.hright a .cart{
+    width: 16px;
+    height: 16px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 140px;
+}
+.hright span{
+    float: left;
+    margin-left: 185px;
+    margin-top: -40px;
 }
 .bigbox{
     position: relative; 
@@ -178,6 +189,7 @@ nav{
     float: left;
     margin: 0 20px;
     text-decoration: none;
+    color: black;
 }
 .navbox a:hover{
     color: #85b24b;
@@ -187,7 +199,6 @@ nav{
     float: left;
     margin-top: 10px;
 }
-
 .navbar-form{
   margin-top:-2px;
 }

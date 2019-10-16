@@ -60,11 +60,9 @@ function getCookie(key){
 		}
 		return null;
 	}
-	
 	function trim(str){
 		return str.replace(/\s+/g,"");
 	}
-	
 	window.onload = function(){
 		// alert(trim(document.cookie));
 		document.getElementById("username").value = getCookie("username");

@@ -19,6 +19,10 @@ gulp.task("watchall",async ()=>{
         gulp.src("img/**/*")
         .pipe(gulp.dest("D:\\phpstudy1\\www\\oneleaf\\img"))
     })
+    gulp.watch("imgs/**/*",async ()=>{
+        gulp.src("imgs/**/*")
+        .pipe(gulp.dest("D:\\phpstudy1\\www\\oneleaf\\imgs"))
+    })
     gulp.watch("demosass/*.scss",async ()=>{
         gulp.src("demosass/*.scss")
         .pipe(sass())

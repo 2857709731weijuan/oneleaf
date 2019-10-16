@@ -1,0 +1,566 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit">
+<meta content="always" name="referrer">
+<title>page6</title>
+<script src="js/jquery-1.11.0.min.js"></script>
+<link rel="stylesheet" href="css/page6.css">
+</head>
+<body>
+<div class="headerbox">
+    <!-- header -->
+    <header>
+        <div class="hleft">
+            <a > <img src="img/icon_wb.png" alt="" class="wb"></a>
+            <a > <img src="img/icon_wx.png" alt="" class="wx">
+                <img src="img/wx2img.jpg" alt="" class="wximg">
+            </a>
+        </div>
+        <div class="hmiddle">
+            <a href="index.html"><img src="img/logo.png" alt=""></a>
+        </div>
+        <div class="hright">
+            <a href="page3.html"> 注册登录</a>
+            <a href=""> 联系我们</a>
+        </div>
+    </header>
+    <!-- nav -->
+    <nav id="navv">
+        <div class="navbox">
+            <a href="mianmo.html">面膜</a>
+            <img src="img/icon_round.png" alt="">
+            <a href="page1.html">护肤</a>
+            <img src="img/icon_round.png" alt="">
+            <a href="#" class="pin lis ">品牌故事</a>
+            <img src="img/icon_round.png" alt="">
+            <a href="#" class="lis">门店信息</a>
+            <img src="img/icon_round.png" alt="">
+            <a href="page5.html">新品试用</a>
+        </div>
+        <div id="small">
+            <div class="pinbox boxmegg" id="C">
+                <a href="#">品牌故事</a>
+                <a href="#">品牌资讯</a>
+            </div>
+            <div class="dianbox boxmegg" id="E">
+                <a href="#" >专属产品</a>
+                <a href="#">明星产品</a>
+                <a href="#">当季促销</a>
+                <a href="#">会员专区</a>
+                <a href="#">品牌专卖店</a>
+                <a href="#">加盟政策</a>
+                <a href="#">财富分享</a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- body -->
+	<hr class="hr">
+    <div class="gift_content">
+        <div class="series">
+            <div class="seriesTitle clearfix">
+                <div class="fl gb"></div>
+                <div class="fr gb"></div>
+                <div class="centerTitle" style="font-size:18px;line-height:18px;"><span class="letter">门店查询</span></div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=97b48170812f76f0d4a477a006697f42"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <style>
+    .mapContent {
+        width: 1070px;
+        margin: 36px auto 25px;
+        height: 635px;
+    }
+
+    .mapBox {
+        min-width: 725px;
+        min-height: 635px;
+    }
+
+
+    #container {
+        position: relative;
+        width: 725px;
+        height: 100%;
+    }
+    .storeList {
+    width: 332px;
+    height: 100%;
+    overflow-y: scroll;
+    }
+
+    .store_selectBox select {
+         width: 100%;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        padding-left: 12px;
+        line-height: 36px;
+        background: url(http://47.99.73.159/assets/frontend/images/dI.png) no-repeat;
+        background-position: 90% 50%;
+        background-size: 10%;
+        cursor: pointer;
+        height: 100%;
+    }
+
+    .store_selectBox div {
+        width: 144px;
+            border-radius: 2px;
+        border: 1px solid #e2e2e2;
+        height: 38px;
+    }
+    .store_search{
+        cursor: pointer;
+        width: 312px;
+        height: 46px;
+        line-height: 46px;
+        color: #fff;
+        background: #000;
+        font-size: 14px;
+        margin-top: 12px;
+        text-align: center;
+    }
+    .store_near{
+        position: relative;
+        margin-top: 40px;
+    }
+    .store_near img{
+        position: absolute;
+        left: 69px;
+        top: 4px;
+    }
+    .store_near p{
+        cursor: pointer;
+        font-size: 14px;
+        color: #666;
+        text-align: center;
+        border-bottom: 1px solid;
+        width: 140px;
+        margin: 0 auto;
+    }
+    .store_list{
+        background: #f8f8f8;
+        margin-top: 40px;
+        min-height: 450px;
+    }
+    .store_city{
+        text-align: center;
+        font-size: 16px;
+        padding: 24px 0 26px;
+    }
+    .store_info{
+        width: 276px;
+        background: #fff;
+        margin: 0 auto 15px;
+        padding-left: 16px;
+        padding-right: 5px;
+        cursor: pointer;
+
+    }
+    .store_info_name{
+        padding-top: 25px;
+    }
+    .store_info_add{
+        color: #666;
+        margin-top: 5px;
+    }
+    .store_info_de{
+        /* margin-top: 5px; */
+        color: #666;
+    }
+    .store_info_tel{
+        color: #6a89af;
+        margin: 15px 0;
+    }
+    .store_info_tel img{
+        display: inline-block;
+    }
+    .store_info_time{
+        color: #666;
+    }
+    .store_info_img{
+        cursor: pointer;
+        margin-top: 10px;
+        color: #b1cb6c;
+        padding-bottom: 25px;
+    }
+    .shop_img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 11111;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+    }
+    .sb{
+        border: 1px solid #98BA3B;
+
+    }
+    </style>
+    <div class="mapContent clearfix">
+        <div class="mapBox fl" id="container">
+        <div class="none shop_img">
+            <img src="http://www.oneleafchina.com/Site/showImg?key=51167a362aac238834e79efd84d553c4" height="100%" class="si" style="opacity:0;">
+            <img src="http://47.99.73.159/assets/frontend/images/shopClose.jpg" style="position: absolute;right: 0;cursor: pointer;top:0;" class="shopClose">
+        </div>
+        </div>
+        <div class="storeList fr">
+            <div class="store_selectBox clearfix">
+                <div class="fl">
+                    <select class="se1">
+                        <option value="0">选择省份</option>
+                            <option value="上海市" data="上海市">上海市</option>
+                            <option value="四川省" data="泸州市,成都市,南充市,宜宾市,内江市">四川省</option>
+                            <option value="河北省" data="廊坊市">河北省</option>
+                            <option value="安徽省" data="合肥市">安徽省</option>
+                            <option value="广东省" data="汕头市,深圳市,清远市,广州市">广东省</option>
+                            <option value="江苏省" data="无锡市,常州市">江苏省</option>
+                            <option value="山东省" data="青岛市">山东省</option>
+                            <option value="重庆市" data="重庆市">重庆市</option>
+                            <option value="宁夏回族自治区" data="银川市">宁夏回族自治区</option>
+                    </select>
+                </div>
+                <div class="fr">
+                    <select class="se2">
+                        <option value="0">选择城市</option>
+                    </select>
+                </div>
+            </div>
+            <div class="store_search">搜索</div>
+            <div class="store_near">
+                <img src="http://47.99.73.159/assets/frontend/images/locIcon.png">
+                <p>搜索离您最近的专卖店</p>
+            </div>
+            <div class="store_list">
+                <p class="store_city">全国（32家专卖店）</p>
+                                <div class="store_info" lng="121.460242" lat="31.229506">
+                    <p class="store_info_name">上海静安区四季坊店</p>
+                    <p class="store_info_add">上海市静安区吴江路169号</p>
+                    <p class="store_info_de">四季坊1层106单元</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;021-52996726</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=51167a362aac238834e79efd84d553c4">查看门店照片</p>
+                    <p class="none STR">上海市上海市</p>
+                </div>
+                <div class="store_info" lng="121.485024" lat="31.399252">
+                    <p class="store_info_name">上海宝山区宝乐汇店</p>
+                    <p class="store_info_add">上海市宝山区牡丹江路</p>
+                    <p class="store_info_de">1569号B1层B112号</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;021-36216267</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=97845dcc5377efd6741a058386b952fd">查看门店照片</p>
+                    <p class="none STR">上海市上海市</p>
+                </div>
+                		                <div class="store_info" lng="121.468434" lat="31.206575">
+                    <p class="store_info_name">上海徐汇区日月光店</p>
+                    <p class="store_info_add">上海市徐家汇路618号B1楼日月光广场JUMP</p>
+                    <p class="store_info_de">STATION内B1-P-01</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;021-61212651</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=8ee35f933ec98de5ee9bc192bf3896cd">查看门店照片</p>
+                    <p class="none STR">上海市上海市</p>
+                </div>
+                		                <div class="store_info" lng="121.477938" lat="31.270924">
+                    <p class="store_info_name">上海虹口区龙之梦店</p>
+                    <p class="store_info_add">上海市虹口区西江湾路</p>
+                    <p class="store_info_de">388号凯德龙之梦广场B2层71号</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;021-56372322</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=c71dee09e5395e49c9c8a551feda0364">查看门店照片</p>
+                    <p class="none STR">上海市上海市</p>
+                </div>
+                		                <div class="store_info" lng="121.361900" lat="31.361232">
+                    <p class="store_info_name">上海宝山区龙湖天街店</p>
+                    <p class="store_info_add">上海市宝山区丹霞山路</p>
+                    <p class="store_info_de">50弄1号1F-41</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=4955f9801ce3ca8dea96fe6bf64fa32e">查看门店照片</p>
+                    <p class="none STR">上海市上海市</p>
+                </div>
+                		                <div class="store_info" lng="121.475506" lat="31.230037">
+                    <p class="store_info_name">上海黄浦区香港名店街店</p>
+                    <p class="store_info_add">上海市黄浦区</p>
+                    <p class="store_info_de">人民大道9-99号12A</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;021-63728213</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=2275dcf1d9153cec1cf165274281ad13">查看门店照片</p>
+                    <p class="none STR">上海市上海市</p>
+                </div>
+                		                <div class="store_info" lng="121.412682" lat="31.233108">
+                    <p class="store_info_name">上海普陀区环球港店</p>
+                    <p class="store_info_add">上海市普陀区中山北路</p>
+                    <p class="store_info_de">3300号上海环球港B1层B1139号</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;021-62195816</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=6d2bdf61328476a0edeec9db488d62c7">查看门店照片</p>
+                    <p class="none STR">上海市上海市</p>
+                </div>
+                		                <div class="store_info" lng="105.409446" lat="28.895433">
+                    <p class="store_info_name">四川泸州江阳万象汇店</p>
+                    <p class="store_info_add">四川省泸州市江阳区</p>
+                    <p class="store_info_de">酒城大道四段B1</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10：00-22：00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=82db81cf5fc676a7a5b99b76a411e813">查看门店照片</p>
+                    <p class="none STR">四川省泸州市</p>
+                </div>
+                		                <div class="store_info" lng="104.069228" lat="30.711853">
+                    <p class="store_info_name">四川成都金牛区龙湖店</p>
+                    <p class="store_info_add">四川省成都市金牛区五块石路</p>
+                    <p class="store_info_de">1号27栋1层1号龙湖北城天街B馆-B1-65A</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;028-83219522</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=0f282ccffd8228800d55726f09334fc3">查看门店照片</p>
+                    <p class="none STR">四川省成都市</p>
+                </div>
+                		                <div class="store_info" lng="106.039926" lat="31.351278">
+                    <p class="store_info_name">四川南充南部县圣桦时代广场店</p>
+                    <p class="store_info_add">四川省南充市南部县桂博大道</p>
+                    <p class="store_info_de">2号圣桦时代广场一楼</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;0817-5526188</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=7f31b447079a87c491472b684d30c560">查看门店照片</p>
+                    <p class="none STR">四川省南充市</p>
+                </div>
+                		                <div class="store_info" lng="104.622254" lat="28.767314">
+                    <p class="store_info_name">四川宜宾翠屏区北大街店</p>
+                    <p class="store_info_add">四川省宜宾市翠屏区</p>
+                    <p class="store_info_de">北大街119号</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;0831-8248608</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=789539b58387d0637c93358aa78ee4c3">查看门店照片</p>
+                    <p class="none STR">四川省宜宾市</p>
+                </div>
+                		                <div class="store_info" lng="103.863427" lat="30.685064">
+                    <p class="store_info_name">四川成都温江珠江广场店</p>
+                    <p class="store_info_add">四川省成都市温江区</p>
+                    <p class="store_info_de">光华大道1588号一楼G101</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=6fc4364cde1b4797076f4ced0aa145f7">查看门店照片</p>
+                    <p class="none STR">四川省成都市</p>
+                </div>
+                		                <div class="store_info" lng="116.821254" lat="39.965113">
+                    <p class="store_info_name">廊坊三河燕郊天洋广场店</p>
+                    <p class="store_info_add">河北省三河市燕郊镇</p>
+                    <p class="store_info_de">燕郊天洋广场B1-B020</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=15d88fc85c4cf4cf710d211755fa3b3e">查看门店照片</p>
+                    <p class="none STR">河北省廊坊市</p>
+                </div>
+                		                <div class="store_info" lng="117.435220" lat="31.875294">
+                    <p class="store_info_name">安徽合肥东城禹洲中央广场店</p>
+                    <p class="store_info_add">安徽省肥东长江东路</p>
+                    <p class="store_info_de">与燎原路交汇处</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=e523201d7d65c27796a46ad164216400">查看门店照片</p>
+                    <p class="none STR">安徽省合肥市</p>
+                </div>
+                		                <div class="store_info" lng="116.723606" lat="23.377188">
+                    <p class="store_info_name">汕头新一城店</p>
+                    <p class="store_info_add">广东省汕头市龙湖区金霞街道</p>
+                    <p class="store_info_de">长江路长平新一城B1-006</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=65c954a8159e495662ea829942fb5768">查看门店照片</p>
+                    <p class="none STR">广东省汕头市</p>
+                </div>
+                		                <div class="store_info" lng="113.803459" lat="22.678336">
+                    <p class="store_info_name">深圳福永同泰时代广场店</p>
+                    <p class="store_info_add">广东省深圳市</p>
+                    <p class="store_info_de">宝安大道6259号</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=e1c36b99b7a0395a65d61d03de990784">查看门店照片</p>
+                    <p class="none STR">广东省深圳市</p>
+                </div>
+                		                <div class="store_info" lng="121.483064" lat="30.916249">
+                    <p class="store_info_name">上海奉贤区百联南桥店</p>
+                    <p class="store_info_add">上海市奉贤区百齐路</p>
+                    <p class="store_info_de">588号1FG41-1F-1-090</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=ad377f2deb272ea75bbefcaa32511751">查看门店照片</p>
+                    <p class="none STR">上海市上海市</p>
+                </div>
+                		                <div class="store_info" lng="121.569463" lat="31.114454">
+                    <p class="store_info_name">上海浦东周浦万达店</p>
+                    <p class="store_info_add">上海市浦东区周浦镇沪南路</p>
+                    <p class="store_info_de">3449弄3号1层0039号</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=6cebf13553d76e1086b7b07bcccc0d67">查看门店照片</p>
+                    <p class="none STR">上海市上海市</p>
+                </div>
+                		                <div class="store_info" lng="121.364338" lat="31.132083">
+                    <p class="store_info_name">上海闵行怡丰城店</p>
+                    <p class="store_info_add">上海市闵行区七莘路</p>
+                    <p class="store_info_de">1507号B1层B1-042号铺</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=3d1c49c141a7fa4dea6ae5940a0a55b8">查看门店照片</p>
+                    <p class="none STR">上海市上海市</p>
+                </div>
+                		                <div class="store_info" lng="105.434150" lat="28.908250">
+                    <p class="store_info_name">泸州水井沟摩尔国际广场店</p>
+                    <p class="store_info_add">四川省泸州市龙马潭区</p>
+                    <p class="store_info_de">龙马大道二段37号摩尔国际负一层</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=b20345f0210239d69b0420658d15af39">查看门店照片</p>
+                    <p class="none STR">四川省泸州市</p>
+                </div>
+                		                <div class="store_info" lng="113.064872" lat="23.677197">
+                    <p class="store_info_name">清远顺盈时代广场店</p>
+                    <p class="store_info_add">广东省清远市清城区</p>
+                    <p class="store_info_de">人民一路与静福路交汇处</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=a5cf311811e41d51e8c7918e0bfc8a67">查看门店照片</p>
+                    <p class="none STR">广东省清远市</p>
+                </div>
+                		                <div class="store_info" lng="104.057679" lat="30.673028">
+                    <p class="store_info_name">成都新城市广场店</p>
+                    <p class="store_info_add">四川省成都市青羊区西大街1号</p>
+                    <p class="store_info_de"></p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00-22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=c1c1b55dd4f9fc45033cc01ad3083543">查看门店照片</p>
+                    <p class="none STR">四川省成都市</p>
+                </div>
+                <div class="store_info" lng="104.042821" lat="30.525062">
+                    <p class="store_info_name">成都华阳欧尚店</p>
+                    <p class="store_info_add">四川省成都市天府新区华阳街道</p>
+                    <p class="store_info_de">华府大道二段1号1F1002号</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00-22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=d42e0a969db80ae2b0660bbb1d9cbfe7">查看门店照片</p>
+                    <p class="none STR">四川省成都市</p>
+                </div>
+               <div class="store_info" lng="106.573721" lat="31.080618">
+                    <p class="store_info_name">南充营山县圣桦时代广场店</p>
+                    <p class="store_info_add">四川省南充市营山县复兴路336号L11011</p>
+                    <p class="store_info_de"></p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00-22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=cd64a701c8b77f8ea0c423e16eeca1f6">查看门店照片</p>
+                    <p class="none STR">四川省南充市</p>
+                </div>
+                <div class="store_info" lng="105.087356" lat="29.599006">
+                    <p class="store_info_name">内江大润发店</p>
+                    <p class="store_info_add">四川省内江市东兴区兴盛路东段485号天成国际B1-04</p>
+                    <p class="store_info_de"></p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00-22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=beed79ad9c9877af7badb482c780363e">查看门店照片</p>
+                    <p class="none STR">四川省内江市</p>
+                </div>
+                 <div class="store_info" lng="120.241840" lat="31.898344">
+                    <p class="store_info_name">江阴万达店</p>
+                    <p class="store_info_add">江苏省江阴市人民西路317号室内步行街超-B1-06</p>
+                    <p class="store_info_de"></p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00-22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=589681ddcab5e6572e657bb146c016bb">查看门店照片</p>
+                    <p class="none STR">江苏省无锡市</p>
+                </div>
+                 <div class="store_info" lng="113.392069" lat="23.061001">
+                    <p class="store_info_name">广州番禺大学成GOGO新天地店</p>
+                    <p class="store_info_add">广东省广州市番禺区大学城中二横路1号L1-1A020</p>
+                    <p class="store_info_de"></p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00-22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=da450565acdebb289dd51105db392dd2">查看门店照片</p>
+                    <p class="none STR">广东省广州市</p>
+                </div>
+                <div class="store_info" lng="120.377052" lat="36.070071">
+                    <p class="store_info_name">青岛万象城店</p>
+                    <p class="store_info_add">山东省青岛市山东路10号(香格里拉大酒店北侧)</p>
+                    <p class="store_info_de"></p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00-22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=ff47407277e6a67b6dd86cf670c70365">查看门店照片</p>
+                    <p class="none STR">山东省青岛市</p>
+                </div>
+                <div class="store_info" lng="106.423557" lat="29.813983">
+                    <p class="store_info_name">重庆北碚天生丽街店</p>
+                    <p class="store_info_add">重庆市北碚区天生丽街B1层B44-2号</p>
+                    <p class="store_info_de"></p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00-22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=d39596977042c7aa1f4912c9edd8c4b1">查看门店照片</p>
+                    <p class="none STR">重庆市重庆市</p>
+                </div>
+                <div class="store_info" lng="119.479105" lat="31.426503">
+                    <p class="store_info_name">常州溧阳上河城店</p>
+                    <p class="store_info_add">常州市溧阳市</p>
+                    <p class="store_info_de">平陵中路369号1222</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=39488fd3a3dc8be81c5eeb1f3bba6182">查看门店照片</p>
+                    <p class="none STR">江苏省常州市</p>
+                </div>
+                <div class="store_info" lng="119.942153" lat="31.726823">
+                    <p class="store_info_name">常州武进新城吾悦广场店</p>
+                    <p class="store_info_add">江苏省常州市</p>
+                    <p class="store_info_de">武进区武宜北路19号1F-146</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=4cd36fed0d27e26d1087c81beab305f8">查看门店照片</p>
+                    <p class="none STR">江苏省常州市</p>
+                </div>
+                		                <div class="store_info" lng="106.149906" lat="38.492154">
+                    <p class="store_info_name">宁夏银川西夏万达广场店</p>
+                    <p class="store_info_add">宁夏银川西夏区</p>
+                    <p class="store_info_de">金波北街75号1号门</p>
+                    <p class="store_info_tel"><img src="http://47.99.73.159/assets/frontend/images/picon.png">&nbsp;&nbsp;</p>
+                    <p class="store_info_time">今日营业：10:00 - 22:00</p>
+                    <p class="store_info_img" name="http://47.99.73.159/Site/showImg?key=38696440a3fd1fe9546555308d7c1d43">查看门店照片</p>
+                    <p class="none STR">宁夏回族自治区银川市</p>
+                </div>
+                		                
+            </div>
+
+
+        </div>
+    </div>
+    <div class="footer" style="line-height: 24px;padding: 10px 0;">
+        上海上美化妆品有限公司 沪ICP备12043696号-5<br>中国·上海市中山北路3300号环球港B座22层 TEL：021-52035555
+    </div>
+</body>
+</html>
+<script src="js/page6.js" ></script>
+<script>
+    var lis = document.getElementsByClassName("lis");
+        var divs = document.getElementsByClassName("boxmegg");
+        var divd = document.getElementById("navv");
+        var div = document.getElementById("small");
+        var lll = div.children;
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].num = i;
+            lis[i].onmouseover = function () {
+                for (var j = 0; j < divs.length; j++) {
+                divs[j].style.display = "none";
+                }
+                divs[this.num].style.display = "block";
+            }
+            divd.onmouseleave = function () {
+                for (var s = 0; s < lll.length; s++) {
+                 lll[s].style.display = "none";
+                }
+            }
+        }
+</script>
