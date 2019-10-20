@@ -62,9 +62,7 @@ a:hover .wximg{
 .hmiddle img{
     padding-left: 320px;
 }
-.hright{
-    float: left;
-}
+
 .hright a{
     height: 20px;
     font-size: 16px;
@@ -74,6 +72,18 @@ a:hover .wximg{
 .hright a:nth-child(1){
     padding-right: 5px;
     border-right: 1px dashed #7f7f7f;
+}
+.hright a .cart{
+    width: 16px;
+    height: 16px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 140px;
+}
+.hright span{
+    float: left;
+    margin-left: 183px;
+    margin-top: -40px;
 }
 /* nav */
 nav{
@@ -164,7 +174,25 @@ nav{
     text-align: center;
     line-height:30px;
 }
+.nimo a{
+    display: block;
+    width: 150px;
+    height: 36px;
+    margin:0 auto;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 0 1px transparent;
+    transition-duration: 0.5s;
+    background:black;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
 
+}
+.nimo a:hover{
+    background-color: #85b24b;
+    color: #fff;
+}
 /* footer */
 .footer{
     width: 100%;

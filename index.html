@@ -48,6 +48,9 @@ img{
 #thumbs .swiper-slide-thumb-active{
 	opacity: 1;
 }
+#welcomeBox{
+        display: none;
+    }
 </style>
 </head>
 
@@ -64,10 +67,17 @@ img{
             <div class="hmiddle">
                 <a href="index.html"><img src="img/logo.png" alt=""></a>
             </div>
+            <div id="welcomeBox">
+                欢迎您：<span>熊小兜</span> <input id="btnLogout" type="button" value="注销" />
+            </div>
+            <div id="loginBox">
+                <!-- <a href="page3.html"> 注册登录</a> -->
+            </div>
+           
             <div class="hright">
-                <a href="page3.html"> 注册登录</a>
+                    <a href="page3.html"> 注册登录</a>
                 <a href="#"> 联系我们</a>
-                <a href="#"><img src="img/cart_bag.png" alt="" class="cart"> </a> <span >0</span>
+                <a href="shopping.html"><img src="img/cart_bag.png" alt="" class="cart"> </a> <span >0</span>
             </div>
         </header>
         <!-- nav -->
@@ -79,7 +89,7 @@ img{
                 <img src="img/icon_round.png" alt="">
                 <a href="page2.html" class="pin lis ">专属产品</a>
                 <img src="img/icon_round.png" alt="">
-                <a href="page6.html" class="lis">门店信息</a>
+                <a href="page6.html" class="lis">品牌专卖店</a>
                 <img src="img/icon_round.png" alt="">
                 <a href="page5.html">新品试用</a>
             </div>
@@ -91,15 +101,15 @@ img{
             </form>
             <div id="small">
                 <div class="pinbox boxmegg" id="C">
-                    <a href="#">品牌故事</a>
-                    <a href="#">品牌资讯</a>
+                    <a href="page2.html">专属产品</a>
+                    <a href="#">明星产品</a>
                 </div>
                 <div class="dianbox boxmegg" id="E">
                     <a href="#">品牌故事</a>
-                    <a href="#">明星产品</a>
+                    <a href="#">品牌资讯</a>
                     <a href="#">当季促销</a>
                     <a href="#">会员专区</a>
-                    <a href="#">品牌专卖店</a>
+                    <a href="#">门店信息</a>
                     <a href="#">加盟政策</a>
                     <a href="#">财富分享</a>
                 </div>
@@ -239,9 +249,29 @@ img{
 </html>
 <script src="js/move1908.js"></script>
 <script src="js/banner02.js"></script>
+<script src="js/cookieTools.js"></script>
 <script src="js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/swiper.min.js"></script>
+<script src="js/swiper.min.js"></script>
 <script type="text/javascript">
+function showUser(){
+    let username = getCookie("username");
+    if(username!=null){
+        $("#welcomeBox").firstElementChild.innerHTML =username;
+        $("#welcomeBox").style.display ="block";
+        $("#loginBox").style.display = "none";
+    }else{
+        $("#welcomeBox").style.display ="none";
+        $("#loginBox").style.display ="block";
+    }
+}
+
+window.onload= function(){
+    showUser();
+    $("#btnLogout").onclick =function(){
+        removeCookie("username");
+        showUser();
+    }
+}
 
  window.onload = function () {
         new Banner($("#boximg"), {});

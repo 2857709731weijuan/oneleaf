@@ -71,6 +71,18 @@ a:hover .wximg {
   padding-right: 5px;
   border-right: 1px dashed #7f7f7f; }
 
+.hright a .cart {
+  width: 16px;
+  height: 16px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 140px; }
+
+.hright span {
+  float: left;
+  margin-left: 183px;
+  margin-top: -40px; }
+
 /* nav */
 nav {
   width: 100%;
@@ -136,34 +148,63 @@ nav {
   text-decoration: none; }
 
 .content {
-  width: 1070px;
-  height: 600px;
-  margin: 0 auto; }
-
-.top {
-  width: 1070px;
-  margin: 0 auto; }
-
-.nimo1 {
-  float: left;
-  width: 450px;
-  height: 20px;
-  background: #98ba3b;
-  margin-top: 20px; }
-
-.nimo2 {
-  float: right;
-  width: 450px;
-  height: 20px;
-  background: #98ba3b;
-  margin-top: -20px; }
-
-span {
-  display: block;
-  width: 140px;
-  height: 20px;
+  width: 800px;
+  height: 400px;
   margin: 0 auto;
-  padding: 20px 35px; }
+  margin-top: 160px; }
+
+.imageBox {
+  width: 300px;
+  height: 300px;
+  margin: 50px 20px;
+  background: #b1ca8f;
+  float: left; }
+
+.imageBox img {
+  width: 250px;
+  height: 250px;
+  margin: 20px 20px; }
+
+.rightBox {
+  width: 400px;
+  height: 350px;
+  margin: 25px 20px;
+  float: left;
+  padding: 20px 20px; }
+
+.rightBox .ehg {
+  font-size: 20px; }
+
+.rightBox .yi {
+  font-size: 24px;
+  margin-bottom: 20px; }
+
+dl {
+  float: left;
+  margin-left: 50px; }
+
+dl dt {
+  font-size: 20px; }
+
+dl dd {
+  font-size: 20px; }
+
+.bincl {
+  width: 350px;
+  height: 80px;
+  margin-top: 140px;
+  font-size: 14px; }
+
+.Cart {
+  width: 120px;
+  height: 30px;
+  background: black;
+  color: white;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 120px; }
 
 /* footer */
 .footer {
@@ -173,7 +214,8 @@ span {
   text-align: center;
   line-height: 24px;
   padding: 10px 0;
-  margin-top: 60px; }
+  margin-top: 60px;
+  overflow: hidden; }
 
 .footer a:hover {
   color: #85b24b;

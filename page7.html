@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/pagr5.css">
+    <link rel="stylesheet" href="css/page7.css">
 </head>
 <body>
     <div class="headerbox">
@@ -29,6 +29,7 @@
             <div class="hright">
                 <a href="page3.html"> 注册登录</a>
                 <a href=""> 联系我们</a>
+                <a href="shopping.html"><img src="img/cart_bag.png" alt="" class="cart"> </a> <span >0</span>
             </div>
         </header>
         <!-- nav -->
@@ -68,17 +69,33 @@
         </nav>
     </div>
 <!-- content -->
-    <div class="image">
-        <img src="img/listcover.jpg" alt="">
-    </div>
-    <div class="content">
-        <div class="top" id="floor1">
-            <div class="nimo1 "></div>
-            <span>新品试用</span>  
-            <div class="nimo2"></div>
+   
+    <div class="content" id="Goods">
+        <!-- <div class="GOODS">
+        <div class="imageBox">
+            <img src="imgs/showImg 2.jpg" alt="">
         </div>
-        <img src="img/showImg (44).jpg" alt="">
-    </div>
+        <div class="rightBox">
+            <p class="eng">Jojoba Moisturizing essential Cream</p>
+            <p class="yi">一叶子霍霍巴倍润滋养精华霜</p> 
+            <dl>
+                <dt>规格</dt>
+                <dd>120g</dd>
+            </dl>
+            <dl>
+                <dt>功效</dt>
+                <dd>Purifying & Soothing<br>洁净 温和</dd>
+            </dl>
+           
+            <div class="bincl">
+                <p >水、甘油、柠檬酸、橄榄油 PEG-7 酯类、小苍兰（FREESIA REFRACTA）提取物等等。</p>
+            </div>
+            <div class="Cart">
+                加入购物车
+            </div>
+        </div>
+    </div> -->
+</div> 
         
 <!-- footer -->
    <div class="footer">
@@ -108,4 +125,87 @@ var lis = document.getElementsByClassName("lis");
             }
         }
     }
+    window.onload= function(){
+        let req = new XMLHttpRequest();
+		req.open("get","getGoodsInfo.php?goodsId="+"0001",true);
+		req.onreadystatechange = function(){
+			if(req.readyState==4 && req.status==200){
+				let str = req.responseText;
+				let objs = JSON.parse(str);
+				let htmlStr ="";
+					htmlStr =`<div class="GOODS">
+                            <div class="imageBox">
+                                <img src="${objs.goodsImg}" alt="">
+                            </div>
+                            <div class="rightBox">
+                                <p class="eng">${objs.goodsType}</p>
+                                <p class="yi">${objs.goodsName}</p> 
+                                <dl>
+                                    <dt>规格</dt>
+                                    <dd>${objs.beiyong2}</dd>
+                                </dl>
+                                <dl>
+                                    <dt>功效</dt>
+                                    <dd>${objs.beiyong3}<br>${objs.beiyong4}</dd>
+                                </dl>
+                            
+                                <div class="bincl">
+                                    <p >${objs.beiyong5}</p>
+                                </div>
+                                <div class="Cart" onclick="goShopping()">
+                                    加入购物车
+                                </div>
+                            </div>;
+                        </div>`;
+				$("#Goods").innerHTML =htmlStr;
+			}
+		}
+		req.send();
+    }
+
+  function goShopping(){
+        let xhr = new XMLHttpRequest();
+    
+    xhr.open("post","addShoppingCart.php",true);
+
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState==4 && xhr.status==200){
+            if(xhr.responseText=="1"){
+                alert("你已经加入！")
+            }else{
+               alert("加入失败！")
+            }
+        }
+    }
+    //post方式：设置请求头
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    //post方式：把传给服务器端数据（键值对）放在send函数的参数里。
+    let name= getCookie();
+    let sendstr = `vipName=${name}&goodsId=${"0001"}&goodsCount=${"1"}`;
+    xhr.send(sendstr);
+}
+function getCookie(key){
+		var cookiestr = document.cookie;
+		var list = cookiestr.split(";");
+		for(var i in list){
+			var arr = list[i].split("=");
+			if(trim(arr[0]) == key){
+				return arr[1];
+			}
+		}
+		return null;
+	}
+    function trim(str){
+		return str.replace(/\s+/g,"");
+	}
+
+    function $(str){
+	if(str.charAt(0)=="#"){
+		return document.getElementById(str.substring(1));
+	}else if(str.charAt(0)=="."){
+		return document.getElementsByClassName(str.substring(1));
+	}else{
+		return document.getElementsByTagName(str);
+	}
+}	
 </script>
