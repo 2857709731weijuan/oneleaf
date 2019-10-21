@@ -53,7 +53,7 @@ a:hover .wximg {
   display: none; }
 
 .hmiddle {
-  width: 800px;
+  width:700px;
   height: 80px;
   float: left;
   margin-top: 20px; }
@@ -61,6 +61,39 @@ a:hover .wximg {
 .hmiddle img {
   padding-left: 320px; }
 
+  #welcomeBox{
+    margin-top: 20px;
+    float: left;
+    width: 200px;
+    height: 50px;
+    display: none;
+}
+#btnLogout{
+    float: left;
+}
+#loginBox{
+    float: left;
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+    color: #111111;
+    line-height: 60px; 
+}
+.cartBox{
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+}
+.cartBox img{
+    width: 25px;
+    height: 25px;
+}
+.hright{
+    float: left;
+    width: 100px;
+    height: 50px;
+}
 .hright {
   float: left; }
 

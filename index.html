@@ -67,17 +67,17 @@ img{
             <div class="hmiddle">
                 <a href="index.html"><img src="img/logo.png" alt=""></a>
             </div>
+            <div class="hright">
+                <a href="#"> 联系我们</a>
+            </div>
             <div id="welcomeBox">
                 欢迎您：<span>熊小兜</span> <input id="btnLogout" type="button" value="注销" />
             </div>
             <div id="loginBox">
-                <!-- <a href="page3.html"> 注册登录</a> -->
+                <a href="page3.html"> 注册登录</a>
             </div>
-           
-            <div class="hright">
-                    <a href="page3.html"> 注册登录</a>
-                <a href="#"> 联系我们</a>
-                <a href="shopping.html"><img src="img/cart_bag.png" alt="" class="cart"> </a> <span >0</span>
+            <div class="cartBox">
+                <a href="shopping.html"><img src="img/cart_bag.png" alt="" class="cart"> </a> 
             </div>
         </header>
         <!-- nav -->
@@ -265,15 +265,12 @@ function showUser(){
     }
 }
 
-window.onload= function(){
+ window.onload = function () {
     showUser();
     $("#btnLogout").onclick =function(){
         removeCookie("username");
         showUser();
     }
-}
-
- window.onload = function () {
         new Banner($("#boximg"), {});
         new Banner(
             $("#box2"),
@@ -283,8 +280,7 @@ window.onload= function(){
                 douColor: "#85b24b"
             }
         );
-    }
-
+}
     var lis = document.getElementsByClassName("lis");
     var divs = document.getElementsByClassName("boxmegg");
     var divd = document.getElementById("navv");
@@ -322,7 +318,7 @@ var gallerySwiper = new Swiper('#gallery', {
 	}
 })
     
-    function $(str) {
+function $(str) {
         if (str[0] == "#") {
             return document.getElementById(str.substring(1));
         } else if (str[0] == ".") {

@@ -50,42 +50,20 @@
 <script src="js/cookieTools.js"></script>
 <script>
 
-function getCookie(key){
-		var cookiestr = document.cookie;
-		var list = cookiestr.split(";");
-		for(var i in list){
-			var arr = list[i].split("=");
-			if(trim(arr[0]) == key){
-				return arr[1];
-			}
-		}
-		return null;
-	}
-	function trim(str){
-		return str.replace(/\s+/g,"");
-	}
-	// window.onload = function(){
-	// 	// alert(trim(document.cookie));
-	// 	document.getElementById("username").value = getCookie("username");
-	// 	document.getElementById("password").value = getCookie("password");
-	// 	document.getElementById("submitbtn").onclick = function(){
-	// 		var username = document.getElementById("username").value;
-	// 		var password = document.getElementById("password").value;
-	// 		var box = document.getElementsByName("saveNP")[0];
-	// 		if(box.checked){
-	// 			var d = new Date();
-	// 			var currentTime = d.getTime();
-	// 			currentTime += 7*24*60*60*1000;
-	// 			d.setTime(currentTime);
-	// 			console.log(username);
-	// 			console.log(password);
-	// 			document.cookie = "username="+username+";expires="+d;
-	// 			document.cookie = "password="+password+";expires="+d;
-	// 		}
-	// 		//数据校验
-	// 		//提交表单
-	// 	}
-	// }
+// function getCookie(key){
+// 		var cookiestr = document.cookie;
+// 		var list = cookiestr.split(";");
+// 		for(var i in list){
+// 			var arr = list[i].split("=");
+// 			if(trim(arr[0]) == key){
+// 				return arr[1];
+// 			}
+// 		}
+// 		return null;
+// 	}
+// 	function trim(str){
+// 		return str.replace(/\s+/g,"");
+// 	}
 	
     $("#btnLogin").onclick = function(){
         //1、
@@ -96,7 +74,7 @@ function getCookie(key){
         xhr.onreadystatechange = function(){
             if(xhr.readyState==4 && xhr.status==200){
                 if(xhr.responseText=="1"){
-                    addCookie("vipName",$("username").value,7);
+                    addCookie("username",$("#username").value,7);
                     location.href="index.html";
                    
                 }else{
